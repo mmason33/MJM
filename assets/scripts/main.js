@@ -20,16 +20,16 @@
       init: function() {
         // JavaScript to be fired on all pages
 
-          $('.nav-list li').click(function(){
+          $('.nav-list li a').click(function(){
             $('a.active-item').removeClass('active-item');
-            $(this).addClass('active');
+            $(this).addClass('active-item');
           });
 
           $( '#my-slider' ).sliderPro({
             width: '100%',
-            height: '50vh',
+            height: '80vh',
             arrows: false,
-            buttons: true,
+            buttons: false,
             autoplay: false,
             loop: false
           });
