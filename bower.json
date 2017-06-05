@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.6",
-    "slider-pro": "^1.2.2"
+    "slider-pro": "^1.2.2",
+    "aos": "^2.1.1"
   }
 }
