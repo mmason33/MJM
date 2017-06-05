@@ -1,1 +1,32 @@
 
+canvas {
+	position: fixed;
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	cursor: pointer; 
+}
+
+
+.text-box {
+
+}
+
+.text-box--area {
+
+}
+
+h1, h2, h3 , h4, h5, h6 {
+	font-family: 'Maven Pro', sans-serif;
+	font-weight: 500;
+}
+
+body {
+	font-family: 'Maven Pro', sans-serif;
+	font-weight: 400;
+}
+
+
+.slide-wrap {
+	margin-top: 45vh;
+}
