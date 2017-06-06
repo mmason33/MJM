@@ -57,17 +57,19 @@
               return colors[index];
             }
             function current() {
-              return colors[index]
+              return colors[index];
             }
             return {
               next: next,
               current: current
-            }
+            };
           })();
 
           function removeAnimation(animation) {
             var index = animations.indexOf(animation);
-            if (index > -1) animations.splice(index, 1);
+            if (index > -1){
+             animations.splice(index, 1);
+            }          
           }
 
           function calcPageFillRadius(x, y) {
@@ -79,7 +81,7 @@
           function addClickListeners() {
             document.addEventListener("touchstart", handleEvent);
             document.addEventListener("mousedown", handleEvent);
-          };
+          }
 
           function handleEvent(e) {
               if (e.touches) { 
@@ -89,7 +91,7 @@
               var currentColor = colorPicker.current();
               var nextColor = colorPicker.next();
               var targetR = calcPageFillRadius(e.pageX, e.pageY);
-              var rippleSize = Math.min(200, (cW * .4));
+              var rippleSize = Math.min(200, (cW * 0.4));
               var minCoverDuration = 750;
               
               var pageFill = new Circle({
@@ -136,7 +138,7 @@
                   y: e.pageY,
                   fill: currentColor,
                   r: anime.random(24, 48)
-                })
+                });
                 particles.push(particle);
               }
               var particlesAnimation = anime({
@@ -166,7 +168,7 @@
 
           var Circle = function(opts) {
             extend(this, opts);
-          }
+          };
 
           Circle.prototype.draw = function() {
             ctx.globalAlpha = this.opacity || 1;
@@ -183,7 +185,7 @@
             }
             ctx.closePath();
             ctx.globalAlpha = 1;
-          }
+          };
 
           var animate = anime({
             duration: Infinity,
@@ -238,7 +240,7 @@
 
           function startFauxClicking() {
             setTimeout(function(){
-              fauxClick(anime.random( cW * .2, cW * .8), anime.random(cH * .2, cH * .8));
+              fauxClick(anime.random( cW * 0.2, cW * 0.8), anime.random(cH * 0.2, cH * 0.8));
               startFauxClicking();
             }, anime.random(200, 900));
           }
