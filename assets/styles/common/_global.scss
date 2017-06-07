@@ -29,6 +29,7 @@ body {
 
 .slide-wrap {
 	margin-top: 30vh;
+	text-align: center;
 }
 
 .sp-button {
@@ -72,7 +73,7 @@ body {
 			color: #000;
 			padding: 8px 11px;
 			transition: ease all 0.2s;
-			&:hover {
+			&:hover, &:focus {
 				text-decoration:none;
 			}
 		}
@@ -84,11 +85,17 @@ body {
 	}
 }
 
+.content-wrap {
+	position: relative;
+	width: 100%;
+}
 
 .hide {
 	display: none;
+	transition: ease all 0.3s;
 }
 
 .active {
 	display: block;
+	transition: ease all 0.3s;
 }

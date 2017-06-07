@@ -2,19 +2,30 @@
 
 <?php if( have_rows('text_box')): ?>
 <?php $i = 1; ?>
+
+	<div class="content-wrap" data-aos="zoom-in" data-aos-once="true">
+
 	<?php while ( have_rows('text_box') ) : the_row(); ?>
-		<?php if ($i == 1): ?>
+
+		<?php if ($i == 1): ?> 
+
 			<section id="<?php echo 'section-'.$i; ?>" class="text-area active">
+
 		<?php else: ?>
+
 			<section id="<?php echo 'section-'.$i; ?>" class="text-area hide">
+
 		<?php endif; ?>
+
 				<div class="text-center slide-wrap">
 					<?php echo get_sub_field('text_area'); ?>
 				</div>
-		</section>		
-	<?php $i++; ?>
-	<?php endwhile; ?>
+			</section>	
 
+	<?php $i++; ?>
+
+	<?php endwhile; ?>
+	</div>
 <?php else: ?>
 	
 <?php endif; ?>
