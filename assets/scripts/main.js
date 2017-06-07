@@ -20,18 +20,45 @@
       init: function() {
         // JavaScript to be fired on all pages
 
-          $('.nav-list li a').click(function(){
-            $('a.active-item').removeClass('active-item');
+          // $('.nav-list li a').click(function(){
+          //   $('a.active-item').removeClass('active-item');
+          //   $(this).addClass('active-item');
+          // });
+
+
+
+          $('.nav-list li a').click(function(e){
+
+            e.preventDefault();
+
+            var active_tab_selector = $('.nav-list li a.active-item').attr('href');
+
+            var active_nav = $('.nav-list li a.active-item');
+            active_nav.removeClass('active-item');
+
             $(this).addClass('active-item');
+
+            $(active_tab_selector).removeClass('active');
+            $(active_tab_selector).addClass('hide');
+
+            var target_tab_selector = $(this).attr('href');
+            $(target_tab_selector).removeClass('hide');
+            $(target_tab_selector).addClass('active');
+
+            console.log($(this).attr('href'));
+
+
           });
 
+
+
           $( '#my-slider' ).sliderPro({
-            width: '100%',
-            height: '80vh',
-            arrows: false,
-            buttons: false,
-            autoplay: false,
-            loop: false
+              width: '100%',
+              height: '80vh',
+              arrows: false,
+              buttons: false,
+              autoplay: false,
+              loop: false
           });
 
           AOS.init({
